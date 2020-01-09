@@ -4,6 +4,12 @@
 # Log file
 *.log
 
+# xml file
+*.xml
+
+# .properties file
+*.properties
+
 # BlueJ files
 *.ctxt
 
