@@ -17,6 +17,8 @@ public class ProbandoGit {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("hola a todos");
+        System.out.println("prueba 2");
+        System.out.println("prueba 3");
     }
     
 }
