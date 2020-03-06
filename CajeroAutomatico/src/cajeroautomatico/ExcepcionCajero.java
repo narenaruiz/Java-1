@@ -26,4 +26,8 @@ public class ExcepcionCajero extends Exception {
         this.mensaje = mensaje;
     }
     
+    public void añadirMensaje(String newMessage){
+        this.setMensaje(this.getMensaje()+newMessage);
+    }
+    
 }
