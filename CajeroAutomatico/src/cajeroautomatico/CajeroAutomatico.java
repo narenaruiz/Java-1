@@ -90,12 +90,14 @@ public class CajeroAutomatico {
                 if (actualizarSaldoCajero(importe)) {
                     ((TarjetaDebito) t).disminuirSaldoDisp(importe);
                 }
+                else throw new ExcepcionCajero(importe);
             }
         } else {//es que es tarjeta de credito
             if (((TarjetaCredito) t).comprobarSaldoSuficiente(importe)) {
                 if (actualizarSaldoCajero(importe)) {
                     ((TarjetaCredito) t).disminuirSaldoDisp(importe);
                 }
+                else throw new ExcepcionCajero(importe);
             }
         }
 
@@ -120,6 +122,7 @@ public class CajeroAutomatico {
         int[][] copia = new int[7][2];//billetes por defecto;
         arrayCopy(this.getBilletes(), copia);
         int cantidadCopy = cantidad;
+        boolean salida=false;
         String resultado = "Desglose de la cantidad satisfecha: ";
         //for (int i = 0; i < this.getBilletes().length; i++) {
         int i = 0;
@@ -136,13 +139,12 @@ public class CajeroAutomatico {
             i++;
         }
         if (cantidad != 0) {
-            arrayCopy(copia, this.getBilletes());
-            System.out.println("cantidad ="+cantidad);
-            throw new ExcepcionCajero(cantidadCopy);
+            arrayCopy(copia, this.getBilletes());     
         } else {
             System.out.println(resultado);
+            salida=true;
         }
-        return true;
+        return salida;
     }
 
     public static void arrayCopy(int[][] aSource, int[][] aDestination) {
