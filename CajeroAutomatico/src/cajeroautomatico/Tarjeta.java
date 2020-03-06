@@ -7,26 +7,26 @@ package cajeroautomatico;
 
 /**
  * son <b>comentarios</b> 1
- * @author professorat
- * son comentarios 2
+ *
+ * @author professorat son comentarios 2
  */
-
 public abstract class Tarjeta {
-     
+
     private String nif;
     private int pin;
     private String nombre;
     private String apellido;
     private boolean estado;//true activada false desactivada
-/**
- * 
- * @param nif nif del cliente 
- * @param pin pin numérico del cliente
- * @param nombre
- * @param apellido 
- */
-    
-    public Tarjeta() {       
+
+    /**
+     *
+     * @param nif nif del cliente
+     * @param pin pin numérico del cliente
+     * @param nombre
+     * @param apellido
+     */
+
+    public Tarjeta() {
     }
 
     public Tarjeta(String nif, int pin, String nombre, String apellido) {
@@ -44,7 +44,6 @@ public abstract class Tarjeta {
         this.setNombre(t1.getNombre());
         this.setPin(t1.getPin());
     }
-    
 
     public String getNif() {
         return nif;
@@ -52,10 +51,10 @@ public abstract class Tarjeta {
 
     public void setNif(String nif) {
         this.nif = nif;
-/**
- * @code jdkddd
- */
-        
+        /**
+         * @code jdkddd
+         */
+
     }
 
     public int getPin() {
@@ -89,15 +88,16 @@ public abstract class Tarjeta {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    
+
     public void mostrarTarjeta() {
         //un metodo para comprobar la evolución de los saldos de Tarjetas 
         //y cajero.
         System.out.println("======================");
         System.out.println(" DATOS DE LA TARJETA DEL CLIENTE");
-        System.out.println("Nombre : "+this.getNombre());
-        System.out.println("Apellido: "+this.getApellido());
-        System.out.println("NIF: "+ this.getNif());
-    }  
+        System.out.println("Nombre : " + this.getNombre());
+        System.out.println("Apellido: " + this.getApellido());
+        System.out.println("NIF: " + this.getNif());
+    }
+
     public abstract void disminuirSaldoDisp(double importe);
 }

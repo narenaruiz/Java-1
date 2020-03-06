@@ -20,7 +20,7 @@ public class CajeroAutomatico {
     private static int idUltCaj;
     private int idCaj;
     private int billetes[][];
-    private ArrayList<Tarjeta> listaTarjeta;
+    private ArrayList<Tarjeta> listaTarjeta = new ArrayList<Tarjeta>();
 
     public CajeroAutomatico(int idCaj, int[][] billetes, ArrayList<Tarjeta> listaTarjeta) {
         this.setIdCaj(idUltCaj++);
@@ -30,7 +30,6 @@ public class CajeroAutomatico {
 
     public CajeroAutomatico() {
         this.setIdCaj(idUltCaj++);
-        this.setListaTarjeta(new ArrayList<Tarjeta>());
     }
 
     public static int getIdUltCaj() {

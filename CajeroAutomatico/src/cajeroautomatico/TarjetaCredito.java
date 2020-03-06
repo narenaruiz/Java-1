@@ -15,7 +15,6 @@ public class TarjetaCredito extends Tarjeta {
     private double creditoDisp;
 
     public TarjetaCredito() {
-        super();
     }
     
     public TarjetaCredito(String nif, int pin, String nombre, String apellido, double saldoDisp, double creditoDisp) {
