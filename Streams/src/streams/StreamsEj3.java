@@ -24,6 +24,9 @@ public class StreamsEj3 {
             //Intentar abrir los archivos
             fin = new FileInputStream("origen.txt");
             fout = new FileOutputStream("destino.txt");
+            //escribo cabecera 
+            String cabecera="cabecera de prueba";
+            fout.write(cabecera.getBytes());
             do {
                 i = fin.read();
                 if (i != -1) {
